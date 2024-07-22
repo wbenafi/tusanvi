@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import SidebarItem from "./SidebarItem.astro";
+---
+<!-- Aside es la barra lateral (estilado en el css) -->
+<aside class="shadow-xl hidden md:block">
+  <div class="w-full h-full flex flex-col items-center relative pt-36 pb-10">
+    <!-- Container del logo y texto de TUSANVI -->
+    <div class="absolute -top-28 w-11/12 flex flex-col items-center space-y-2 text-black">
+        <Image
+          src="/assets/tusanvi_solo.webp"
+          alt="tusanvi"
+          width="529"
+          height="346"
+          class="object-contain"
+        />
+        <span class="text-center text-sm font-semibold">
+            CÁMARA DE TURISMO Y COMERCIO DE SAN VICENTE
+        </span>
+        <h4 class="text-center text-3xl font-bold">TUSANVI</h4>
+    </div>
+    <!-- Contenido del sidebar -->
+    <div class="flex flex-col gap-y-3 w-full px-5">
+      <SidebarItem title="Que hacer ahora?" icon={"IC"} />
+      <SidebarItem title="Restaurantes" icon={"IC"} />
+      <SidebarItem title="Hospedaje" icon={"IC"} />
+      <SidebarItem title="Tours" icon={"IC"} />
+      <SidebarItem title="Servicios y Comercio" icon={"IC"} />
+      <SidebarItem title="Afiliados" icon={"IC"} />
+      <SidebarItem title="Quiénes somos?" icon={"IC"} />
+    </div>
+  </div>
+</aside>
+
+<style>
+  aside {
+    /* background: #2B4520; */
+    background: white;
+    width: 250px;
+    position: fixed;
+    top: 20vh;
+    left: 50px;
+    border-radius: 20px;
+    padding: 10px;
+  }
+</style>

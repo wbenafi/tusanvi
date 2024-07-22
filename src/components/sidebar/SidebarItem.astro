@@ -1,0 +1,20 @@
+---
+interface Props {
+	title: string;
+	icon: HTMLElement | string;
+}
+
+const { title, icon } = Astro.props;
+---
+
+<a class="flex items-center gap-x-4 border border-gray-300 hover:shadow
+  rounded-lg py-2 px-4 hover:bg-gray-100 w-full cursor-pointer transition-all duration-300">
+	{icon}
+	<span class="font-semibold">{title}</span>
+</a>
+
+<style>
+  div {
+
+  }
+</style>
