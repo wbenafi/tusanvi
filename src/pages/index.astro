@@ -26,9 +26,9 @@ import SocialMediaButtons from "../components/homepage/SocialMediaButtons";
   <!-- Container del título -->
   <div class="w-full h-svh flex justify-end items-end text-right text-white">
     <h1
-      class="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-wider mr-4 lg:mr-20 mb-[15vh] lg:mb-[15vh] flex flex-col 2xl:flex-row gap-y-3 gap-x-4"
+      class="text-5xl sm:text-6xl lg:text-8xl tracking-wider mr-4 lg:mr-20 mb-[15vh] lg:mb-[15vh] flex flex-col 2xl:flex-row gap-y-3 gap-x-4"
     >
-      <span class="animate-fade-in-left animate-duration-[1500ms] text-transparent [-webkit-text-stroke:_0.5px_white]">¡DESCUBRE</span>
+      <span class="animate-fade-in-left animate-duration-[1500ms] text-transparent [-webkit-text-stroke:_2px_white]">¡DESCUBRE</span>
       <span
         class="animate-fade-in-left animate-duration-[1500ms] animate-delay-1000"
       >
@@ -45,10 +45,19 @@ import SocialMediaButtons from "../components/homepage/SocialMediaButtons";
 <style>
   h1 {
     -webkit-text-stroke: 0px white;
-    font-family: 'Calistoga', cursive;
+    font-family: 'ChunkFive', serif;
   }
 
   .mask {
     mask-image: linear-gradient(black 55%, transparent 98%, transparent 100%);
   }
+</style>
+
+<style is:global>
+  @font-face {
+    font-family: 'ChunkFive';
+    font-display: swap;
+    src: url('/fonts/ChunkFive-Regular.otf');
+  }
+
 </style>
