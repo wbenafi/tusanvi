@@ -27,7 +27,7 @@ export default function SocialMediaButtons() {
 
   return (
     <div className="absolute top-0 w-screen z-1">
-      <div className="relative w-full h-svh">
+      <div className="relative w-full h-svh overflow-hidden">
         <div className="absolute z-10 flex items-center justify-end transition-all duration-1000 ease-in-out bottom-8 gap-x-6" style={{ right: scrollY > 20 ? -200 : 40 }}>
           {SOCIAL_MEDIA_BUTTONS.map(({ name, icon, link }) => {
             return <SocialMediaButton icon={icon} key={name} link={link} />
