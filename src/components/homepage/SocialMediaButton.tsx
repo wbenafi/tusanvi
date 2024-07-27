@@ -12,7 +12,7 @@ export default function SocialMediaButton({
     <motion.a
       whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.9 }}
-      className="size-11 bg-transparent rounded-xl text-gray-900 cursor-pointer"
+      className="size-8 md:size-11 bg-transparent rounded-xl text-gray-900 cursor-pointer"
       href={link}
       target="_blank"
       rel="noreferrer"

@@ -2,7 +2,7 @@
 import Carousel from "./Carousel.astro";
 import CarouselItem from "./CarouselItem.astro";
 
-const h1 = `text-5xl sm:text-6xl lg:text-7xl tracking-wider font-['ChunkFive']`;
+const h1 = `text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wider font-['ChunkFive'] max-w-full whitespace-wrap`;
 
 ---
 
@@ -48,7 +48,7 @@ const h1 = `text-5xl sm:text-6xl lg:text-7xl tracking-wider font-['ChunkFive']`;
       <h1
         class:list={[
           h1,
-          "mr-4 lg:mr-20 mb-[10vh] lg:mb-[15vh] flex flex-col 2xl:flex-col gap-y-3 gap-x-4",
+          "mr-4 lg:mr-20 mb-[15vh] lg:mb-[15vh] flex flex-col 2xl:flex-col gap-y-3 gap-x-4",
         ]}
       >
         <span
@@ -74,10 +74,13 @@ const h1 = `text-5xl sm:text-6xl lg:text-7xl tracking-wider font-['ChunkFive']`;
 
   <CarouselItem>
     <div
-      class="relative flex items-end justify-end w-full text-left text-white h-svh"
+      class="relative flex items-end justify-end w-full text-right text-white h-svh"
     >
       <h1
-        class="text-5xl sm:text-6xl lg:text-7xl tracking-wider mr-4 lg:mr-20 mb-[40vh] lg:mb-[45vh] flex flex-col 2xl:flex-col gap-y-3 gap-x-4 font-['ChunkFive']"
+        class:list={[
+          h1,
+          "mx-4 lg:mr-20 mb-[35vh] lg:mb-[45vh] flex flex-col gap-y-3 gap-x-4 font-['ChunkFive']",
+        ]}
       >
         <span
           class="animate-fade-in-left animate-duration-[800ms] animate-delay-500 capitalize"
