@@ -1,20 +1,24 @@
 ---
+import Icon from '../icons/Icon.astro';
+
 interface Props {
-	title: string;
-	icon: HTMLElement | string;
+  title: string;
+  icon: string;
+  link: string;
+  className?: string;
 }
 
-const { title, icon } = Astro.props;
+const { title, icon, link, className } = Astro.props;
 ---
 
-<a class="flex items-center gap-x-4 border border-gray-300 hover:shadow
-  rounded-lg py-2 px-4 hover:bg-gray-100 w-full cursor-pointer transition-all duration-300">
-	{icon}
-	<span class="font-semibold">{title}</span>
+<a
+  class:list={[
+    className,
+    "flex items-center gap-x-4 border-2 border-gray-300 hover:shadow",
+    "rounded-lg py-2 px-4 w-full cursor-pointer transition-all duration-300",
+  ]}
+  href={link}
+>
+  <Icon name={icon} className="text-3xl" />
+  <span class="font-semibold">{title}</span>
 </a>
-
-<style>
-  div {
-
-  }
-</style>

@@ -1,0 +1,10 @@
+---
+interface Props {
+  name: string;
+  className?: string;
+}
+
+const { name, className } = Astro.props;
+---
+
+<i class:list={["bx", name, className]}></i>
