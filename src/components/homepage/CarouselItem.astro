@@ -1,0 +1,17 @@
+---
+
+const { itemsCount, delay } = Astro.props;
+---
+
+<div class="carousel-frame">
+    <slot />
+</div>
+
+<style>
+    .carousel-frame {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+</style>

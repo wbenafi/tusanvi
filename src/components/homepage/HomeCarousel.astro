@@ -1,0 +1,108 @@
+---
+import Carousel from "./Carousel.astro";
+import CarouselItem from "./CarouselItem.astro";
+
+const h1 = `text-5xl sm:text-6xl lg:text-7xl tracking-wider font-['ChunkFive']`;
+
+---
+
+<Carousel itemsCount={3} delay={5000}>
+  <CarouselItem>
+    <div class="flex items-end justify-end w-full text-right text-white h-svh">
+      <h1
+        class:list={[
+          h1,
+          "mr-4 lg:mr-28 mb-[15vh] lg:mb-[15vh] flex flex-col 2xl:flex-row gap-y-3 gap-x-6",
+        ]}
+      >
+        <span
+          class="animate-fade-in-left animate-duration-[800ms] text-transparent [-webkit-text-stroke:_2px_white] uppercase"
+        >
+          ¡Descubre
+        </span>
+        <span
+          class="animate-fade-in-left animate-delay-500 animate-duration-[800ms] text-white uppercase"
+        >
+          San Vicente!
+        </span>
+      </h1>
+      <img
+        src="/assets/portada.webp"
+        alt="tusanvi"
+        width="4032"
+        height="3024"
+        class="object-center h-full object-cover w-full absolute -z-[1] gradient-mask"
+      />
+      <img
+        src="/assets/portada_small.webp"
+        alt="tusanvi"
+        width="500"
+        height="375"
+        class="object-center h-full object-cover absolute -z-[2] w-full blur gradient-mask"
+      />
+    </div>
+  </CarouselItem>
+
+  <CarouselItem>
+    <div class="flex items-end justify-end w-full text-right text-white h-svh">
+      <h1
+        class:list={[
+          h1,
+          "mr-4 lg:mr-20 mb-[10vh] lg:mb-[15vh] flex flex-col 2xl:flex-col gap-y-3 gap-x-4",
+        ]}
+      >
+        <span
+          class="animate-fade-in-left animate-duration-[800ms] animate-delay-500 capitalize"
+        >
+          Un tesoro escondido
+        </span>
+        <span
+          class="animate-fade-in-left animate-duration-[800ms] text-transparent [-webkit-text-stroke:_2px_white] uppercase"
+        >
+          En un rincón de Costa Rica
+        </span>
+      </h1>
+      <video
+        src="/assets/video-3.webm"
+        autoplay
+        loop
+        muted
+        class="w-full h-full object-cover absolute -z-[1] gradient-mask"
+      ></video>
+    </div>
+  </CarouselItem>
+
+  <CarouselItem>
+    <div
+      class="relative flex items-end justify-end w-full text-left text-white h-svh"
+    >
+      <h1
+        class="text-5xl sm:text-6xl lg:text-7xl tracking-wider mr-4 lg:mr-20 mb-[40vh] lg:mb-[45vh] flex flex-col 2xl:flex-col gap-y-3 gap-x-4 font-['ChunkFive']"
+      >
+        <span
+          class="animate-fade-in-left animate-duration-[800ms] animate-delay-500 capitalize"
+        >
+          Entre nubes y tradiciones
+        </span>
+        <span
+          class="animate-fade-in-left animate-duration-[800ms] text-transparent [-webkit-text-stroke:_2px_white] uppercase"
+        >
+          Un pueblo que enamora
+        </span>
+      </h1>
+      <video
+        src="/assets/video-1.webm"
+        autoplay
+        loop
+        muted
+        class="h-svh object-cover w-full absolute -z-[1] gradient-mask"
+      ></video>
+    </div>
+  </CarouselItem>
+</Carousel>
+
+<style>
+  .gradient-mask {
+    mask-image: linear-gradient(black 70%, transparent 98%, transparent 100%);
+  }
+</style>

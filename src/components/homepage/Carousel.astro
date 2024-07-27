@@ -1,0 +1,77 @@
+---
+const { delay } = Astro.props;
+
+const itemsCount = 3;
+---
+
+<div class="carousel-frame">
+  <div
+    class="carousel-slider"
+    style={`--slider-count: ${itemsCount}; --slider-delay: ${delay};`}
+  >
+    <slot />
+  </div>
+</div>
+
+<script>
+  const itemsCount = 3;
+
+  const value = 100 / itemsCount;
+
+  const breakpoints = Array.from(
+    { length: itemsCount },
+    (_, i) => (i + 1) * value
+  );
+
+  const style = document.createElement("style");
+  style.innerHTML = `
+  @keyframes carousel-slider-animation {
+      0% {
+          transform: translateX(100%)
+      }
+      ${breakpoints
+        .map(
+          (bp, i) => `
+          ${bp - 1}% {
+              transform: translateX(${(i - 1) * -100}%)
+          }
+          ${bp + 1}% {
+              transform: translateX(${i * -100}%)
+          }
+      `
+        )
+        .join("")}
+
+      100% {
+          transform: translateX(-100%)
+      }
+  }`;
+  document.getElementsByTagName("head")[0].appendChild(style);
+</script>
+
+<style>
+  .carousel-frame {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  .carousel-slider {
+    min-width: 100%;
+    max-width: calc((var(--slider-count) - 1) * 100%);
+    max-height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform: translateX(100%);
+    animation: carousel-slider-animation
+      calc(1ms * var(--slider-delay) * var(--slider-count)) alternate infinite
+      ease-in-out;
+
+    * {
+      flex-shrink: 0;
+    }
+  }
+</style>

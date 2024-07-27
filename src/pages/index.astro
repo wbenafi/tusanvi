@@ -1,63 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import { Image } from "astro:assets";
 import SocialMediaButtons from "../components/homepage/SocialMediaButtons";
+import HomeCarousel from "../components/homepage/HomeCarousel.astro";
 ---
 
 <Layout title="TUSANVI - San Vicente" showSidebar={true}>
-  <!-- Imagen de fondo -->
-  <Image
-    src="/assets/portada.webp"
-    alt="tusanvi"
-    width="4032"
-    height="3024"
-    class="object-center h-svh object-cover absolute -z-20 w-full mask"
-  />
-
-  <!-- Smaller and blurred version of the background image -->
-  <Image
-    src="/assets/portada_small.webp"
-    alt="tusanvi"
-    width="500"
-    height="375"
-    class="object-center h-svh object-cover absolute -z-30 w-full blur mask"
-  />
-  <!-- Container del título -->
-  <div class="w-full h-svh flex justify-end items-end text-right text-white">
-    <h1
-      class="text-5xl sm:text-6xl lg:text-8xl tracking-wider mr-4 lg:mr-20 mb-[15vh] lg:mb-[15vh] flex flex-col 2xl:flex-row gap-y-3 gap-x-4"
-    >
-      <span class="animate-fade-in-left animate-duration-[1500ms] text-transparent [-webkit-text-stroke:_2px_white]">¡DESCUBRE</span>
-      <span
-        class="animate-fade-in-left animate-duration-[1500ms] animate-delay-1000"
-      >
-        SAN VICENTE!
-      </span>
-    </h1>
-  </div>
+  <HomeCarousel />
   <!-- Container de botones de redes sociales -->
   <SocialMediaButtons client:only="react" />
 
-  <div class="w-full h-screen flex justify-center items-center"></div>
+  <div class="flex items-center justify-center w-full h-screen"></div>
 </Layout>
-
-<style>
-  h1 {
-    -webkit-text-stroke: 0px white;
-    font-family: 'ChunkFive', serif;
-  }
-
-  .mask {
-    mask-image: linear-gradient(black 55%, transparent 98%, transparent 100%);
-  }
-</style>
-
-<style is:global>
-  @font-face {
-    font-family: 'ChunkFive';
-    font-display: swap;
-    src: url('/fonts/ChunkFive-Regular.otf');
-  }
-
-</style>
